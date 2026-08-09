@@ -11,6 +11,7 @@ authors:
     orcid: "https://orcid.org/0000-0001-6752-7569"
     affiliation: "Orthopedics department, The Fourth People's Hospital of Guiyang, China"
 version: "1.0.0"
+doi: "10.5281/zenodo.21863390"
 date-released: "2026-08-10"
 license: MIT
 repository-code: "https://github.com/547653312-ui/spine-mr-finngen"

@@ -1,8 +1,12 @@
 # Immune traits and spine-specific osteomyelitis: a two-sample Mendelian randomization study
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21863390.svg)](https://doi.org/10.5281/zenodo.21863390)
+
 Analysis code, harmonised instrument tables and figures for the manuscript
 *"No robust causal effect of genetically predicted immune traits on
 spine-specific osteomyelitis: a two-sample Mendelian randomization study"*.
+
+**Cite this repository:** Zhen T. spine-mr-finngen: Mendelian randomization pipeline for immune traits and spine-specific osteomyelitis (v1.0.0). Zenodo. https://doi.org/10.5281/zenodo.21863390
 
 The pipeline is written in pure Python and needs **no authentication tokens**:
 exposure data are pulled from the public EBI GWAS Catalog Summary Statistics
