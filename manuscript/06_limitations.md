@@ -6,7 +6,7 @@
 
 3. **Reverse-direction MR not feasible.** FinnGen R11 spine-infection phenotypes report <3 genome-wide-significant independent loci per outcome (OM=2, DISCITIS=1, DISCINF=1, VOM=0, SPONDINF=0), precluding a well-powered reverse-direction MR (spine infection → immune traits). The feasibility table (Supplementary Table S6) records the locus counts transparently. A reverse MR should be revisited in FinnGen R12+ or larger spine-infection GWAS as case counts grow.
 
-4. **CRP exposure population mismatch.** The C-reactive protein GWAS (EFO_0004458) is multi-ancestry (Wojcik 2019, PAGE), whereas outcomes are Finnish (European). Allele frequencies and LD differ, so CRP results were *a priori* downgraded to exploratory and interpreted cautiously. All other exposures were European, matching the outcome sample.
+4. **CRP exposure population mismatch.** The C-reactive protein GWAS (EFO_0004458) is multi-ancestry (Wojcik 2019³⁵, PAGE), whereas outcomes are Finnish (European). Allele frequencies and LD differ, so CRP results were *a priori* downgraded to exploratory and interpreted cautiously. All other exposures were European, matching the outcome sample.
 
 5. **European (FinnGen) generalisability.** Findings derive from a Finnish cohort; trans-ancestry generalisation is untested. MR estimates are most robust within the ancestry of the instrument–outcome pair, which here is European.
 
