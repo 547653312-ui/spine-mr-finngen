@@ -132,7 +132,9 @@ def parse_title_file(path):
         elif mode == 'running title' and s:
             out['running'] = s
         elif mode == 'authors' and s:
-            out['authors'] = s.lstrip('*').rstrip('*') if s.startswith('*') else s
+            # 多行 authors 段：斜体行 = 作者名单，普通行 = 单位/通讯信息，顺序拼接
+            piece = s.lstrip('*').rstrip('*') if s.startswith('*') else s
+            out['authors'] = (out['authors'] + ' ' + piece) if out['authors'] else piece
         elif mode == 'abstract' and s:
             # 摘要正文里允许嵌入 *(...) 注释与 ** 加粗，全部当 P 处理
             out['abstract'].append(('P', s))
@@ -207,6 +209,7 @@ SUPP_BLOCK = [
     ('P', '**Supplementary Table S4.** Multivariable MR (MVMR) adjusting for type-2 diabetes and smoking: full per-exposure × per-outcome estimates with conditional F-statistics and overdispersion factors.'),
     ('P', '**Supplementary Table S5.** Cross-phenotype random-effects meta-analysis (DerSimonian–Laird): pooled ORs with and without SPONDINF.'),
     ('P', '**Supplementary Table S6.** Reverse-direction MR feasibility: genome-wide significant locus counts per spine-infection phenotype in FinnGen R11.'),
+    ('P', '**Supplementary Table S7.** Formal LD-clumping sensitivity analysis (1000 Genomes Phase 3 European panel, r²<0.001, via LDlink LDmatrix): instrument counts before/after clumping for the six key traits and the drug-target cis-pQTL sets, and re-estimated MR results with the clumped instruments.'),
     ('P', '**Supplementary Figure S1.** Per-exposure × per-outcome scatter, forest, funnel and leave-one-out plots (188 panels in `results/figures/`).'),
     ('P', '**Supplementary Methods.** Detailed per-SNP harmonisation actions (same/flip/strand-flip), instrument pruning pipeline, and code module reference.'),
     ('P', '**Reporting Summary.** Nature Portfolio Reporting Summary (PDF, completed at acceptance).'),
@@ -217,7 +220,7 @@ STATEMENTS = [
     ("Data availability",
      "All summary statistics used in this study are publicly available. Exposure traits were obtained from the EBI GWAS Catalog Summary Statistics REST API (GRCh38); outcome phenotypes were obtained from the FinnGen R11 public release. Specific trait identifiers (EFO codes) and FinnGen phenotype codes are listed in the Methods and Supplementary Table S1. No restricted or controlled-access data were used."),
     ("Code availability",
-     "The custom Python analysis pipeline (modules: gwas_io.py, mr_methods.py, mr_pipeline.py, supplementary.py, supplementary_network.py, mvmr_finngen.py, make_main_figures.py) is publicly available at https://github.com/[username]/spine-mr-finngen (placeholder; URL and Zenodo DOI to be added at acceptance). All dependencies (Python 3.13, numpy, pandas, scipy, matplotlib) and execution instructions are documented in the repository README. Per-SNP harmonised tables and supplementary figures are released alongside the code under the same repository."),
+     "All custom code used to generate the results reported here is openly available. The analysis pipeline is written in Python 3.13 and comprises the modules gwas_io.py (EBI GWAS Catalog REST client and FinnGen remote BGZF/tabix reader), mr_pipeline.py (instrument selection, GRCh38 harmonisation and the primary 45-pair analysis), mr_methods.py (IVW, MR-Egger, weighted median, weighted mode, Cochran Q, leave-one-out and F-statistics), supplementary.py (post-hoc power, Steiger directionality and cross-phenotype meta-analysis), supplementary_network.py (drug-target cis-pQTL MR), mvmr_finngen.py (multivariable MR) and make_main_figures.py (Figures 1-4). The repository additionally contains every per-SNP harmonisation table, all leave-one-out and single-SNP estimates, the 188 per-pair supplementary panels, and the instrument manifests, so that all reported numbers can be regenerated end to end without any access-controlled resource. The code is deposited at https://github.com/547653312-ui/spine-mr-finngen and archived with a persistent identifier at Zenodo (DOI: https://doi.org/10.5281/zenodo.21863390). Dependencies and execution instructions are given in the repository README (MIT licence)."),
     ("Author contributions",
      "[To be completed at submission using CRediT (Contributor Roles Taxonomy). Example: X.Y. conceived and designed the study; X.Y. and Z.W. performed the analyses; all authors interpreted the results and drafted the manuscript.]"),
     ("Competing interests",
@@ -282,11 +285,11 @@ def build_docx():
     pa = doc.add_paragraph(); pa.alignment = WD_ALIGN_PARAGRAPH.CENTER
     add_runs(pa, title_info['authors'] or '[Author list to be finalized]')
     pf = doc.add_paragraph(); pf.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    rf = pf.add_run('[Author affiliations: departments, institutions, city, country — to be added at submission]')
+    rf = pf.add_run('Department of Orthopedics, The Fourth People\'s Hospital of Guiyang, Guiyang, China')
     rf.italic = True; rf.font.size = Pt(10)
     # 对应作者标记
     pc = doc.add_paragraph(); pc.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    rc = pc.add_run('Corresponding author: [name, email, ORCID iD — to be added at submission]')
+    rc = pc.add_run('Corresponding author: Zhen Tian. Email: 547653312@qq.com. ORCID: 0000-0001-6752-7569')
     rc.italic = True; rc.font.size = Pt(10)
 
     # 摘要
@@ -428,8 +431,8 @@ def build_tex():
     authors_block = title_info['authors'] or '[Author list to be finalized]'
     if title_info['running']:
         authors_block += r'\\ \emph{Running title: ' + tex_escape(title_info['running']) + '}'
-    authors_block += r'\\ [Affiliations: departments, institutions, city, country --- to be added]'
-    authors_block += r'\\ Corresponding author: [name, email, ORCID iD --- to be added]'
+    authors_block += r'\\ Department of Orthopedics, The Fourth People\'s Hospital of Guiyang, Guiyang, China'
+    authors_block += r'\\ Corresponding author: Zhen Tian. Email: 547653312@qq.com. ORCID: 0000-0001-6752-7569'
     L.append(r'\author{' + tex_escape(authors_block) + '}')
     L.append(r'\date{}'); L.append(r'\maketitle')
     L.append('')
@@ -499,16 +502,13 @@ def build_tex():
 if __name__ == '__main__':
     build_docx()
     build_tex()
-    # 原子替换：先写到 _build_tmp.*，再覆盖正式输出，避开文件被进程持有导致 PermissionError
-    import shutil, os as _os
+    # 原子替换：直接 os.replace 覆盖目标（Windows 上可覆盖已存在文件），
+    # 避免先删后拷被删除安全钩子/文件锁拦截
+    import os as _os
     for tmp, final in [(TMP_DOCX, OUT_DOCX), (TMP_TEX, OUT_TEX)]:
         try:
-            if _os.path.exists(final):
-                _os.remove(final)
-        except PermissionError:
-            pass  # 旧文件被持有；保留原文件，新内容留在 tmp
-        try:
-            shutil.move(tmp, final)
-        except Exception:
-            pass
+            _os.replace(tmp, final)
+            print('Replaced:', final)
+        except Exception as e:
+            print('replace failed, keep tmp:', final, repr(e))
     print('Done. References count:', len(REFERENCES))

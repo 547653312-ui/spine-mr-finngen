@@ -30,6 +30,6 @@
 | 24 | Give a cautious overall interpretation of results considering objectives, limitations, multiplicity of analyses, results from similar studies, and other relevant evidence | **Discussion** — Interpretation; Positioning against prior work; Translational implications |
 | 25 | Discuss the generalisability (external validity) of the study results | **Discussion** — Translational implications; **Limitations** — European (FinnGen) generalisability |
 | 26 | Give the source of funding and the role of the funders for the present study and, if applicable, for the original study on which the present article is based | **Acknowledgements** (to be added at acceptance) |
-| 27 | Provide information on data and code availability (where to access the data and code used in the analyses) | **Data availability** statement; **Code availability** statement (GitHub + Zenodo DOI placeholders) |
+| 27 | Provide information on data and code availability (where to access the data and code used in the analyses) | **Data availability** statement; **Code availability** statement (GitHub: https://github.com/547653312-ui/spine-mr-finngen; Zenodo DOI: 10.5281/zenodo.21863390) |
 
 > *A signed copy of this checklist with each item checked and the corresponding manuscript page/section filled in will be submitted as a Supplementary file alongside the manuscript.*

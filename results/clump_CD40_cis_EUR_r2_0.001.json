@@ -1,0 +1,30 @@
+{
+ "trait": "CD40",
+ "cis": true,
+ "build": "grch38",
+ "r2_threshold": 0.001,
+ "n_before": 3,
+ "n_after": 2,
+ "kept": [
+  {
+   "rsid": "rs6131010",
+   "chr": "20",
+   "pos": "46095666",
+   "pval": 3.87e-314
+  },
+  {
+   "rsid": "rs140120469",
+   "chr": "20",
+   "pos": "45062740",
+   "pval": 8.331e-06
+  }
+ ],
+ "dropped": [
+  {
+   "rsid": "rs2868310",
+   "chr": "20",
+   "pos": "45574950",
+   "pval": 1.557e-23
+  }
+ ]
+}

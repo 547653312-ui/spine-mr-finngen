@@ -1,0 +1,9 @@
+trait	set	n_distance_pruned	n_after_LD_clump	n_removed	removed_rsids
+IL6R	genome-wide	4	2	2	rs3014860; rs12138773
+CD40	genome-wide	3	3	0	-
+CRP	genome-wide	18	18	0	-
+WBC	genome-wide	35	35	0	-
+NEUT	genome-wide	36	36	0	-
+CCL2	genome-wide	7	7	0	-
+IL6R	cis-pQTL	2	1	1	rs12138773
+CD40	cis-pQTL	3	2	1	rs2868310

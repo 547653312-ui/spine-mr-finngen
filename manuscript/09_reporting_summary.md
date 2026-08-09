@@ -37,7 +37,7 @@
 - **STROBE-MR** (Skrivankova et al., JAMA 2021) — completed checklist provided as a Supplementary file.
 
 ## 6. Reproducibility
-- **Code:** Public GitHub repository (placeholder URL to be added; Zenodo DOI to be created at acceptance).
+- **Code:** Public GitHub repository: https://github.com/547653312-ui/spine-mr-finngen (MIT licence). Archived version with persistent identifier: https://doi.org/10.5281/zenodo.21863390.
 - **Data:** All summary statistics are publicly available (no controlled-access data used).
 - **Per-SNP harmonised tables:** Released alongside the code.
 
