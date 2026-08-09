@@ -27,7 +27,7 @@
 ## 4. Statistical methods
 - **Primary:** Inverse-variance-weighted (IVW) under multiplicative random effects.
 - **Secondary:** MR-Egger, weighted median, weighted mode.
-- **Sensitivity:** Cochran Q + I², MR-Egger intercept, leave-one-out, Steiger directionality, Benjamini-Hochberg FDR + Bonferroni (55 tests).
+- **Sensitivity:** Cochran Q + I², MR-Egger intercept, leave-one-out, Steiger directionality, Benjamini-Hochberg FDR + Bonferroni (45 tests).
 - **Multivariable:** MVMR-IVW adjusting for T2D and smoking (and BMI for the IL6R sensitivity).
 - **Meta-analysis:** DerSimonian-Laird random effects across the five phenotypes, with pre-specified exclusion of the n=68 SPONDINF outcome.
 - **Power:** Post-hoc minimum detectable OR at 80% power (two-sided α=0.05).

@@ -47,6 +47,7 @@
 43. Zhao, J. H., Stacey, D., Eriksson, N. *et al.* Genetics of circulating inflammatory proteins and their causal relationships with disease. *Nat. Immunol.* **24**, 1544–1554 (2023). DOI: 10.1038/s41590-023-01584-w.
 44. Sudlow, C., Gallacher, J., Allen, N. *et al.* UK Biobank: an open access resource for identifying the causes of a wide range of complex diseases of middle and old age. *PLoS Med.* **12**, e1001779 (2015). DOI: 10.1371/journal.pmed.1001779.
 45. Bycroft, C., Freeman, C., Petkova, D. *et al.* The UK Biobank resource with deep phenotyping and genomic data. *Nature* **562**, 203–209 (2018). DOI: 10.1038/s41586-018-0579-z.
+46. Burgess, S., Davey Smith, G., Davies, N. M. *et al.* Guidelines for performing Mendelian randomization investigations. *Wellcome Open Res.* **4**, 186 (2020). DOI: 10.12688/wellcomeopenres.15555.1.
 
 > *Notes for the corresponding author:*
 > - *Ref. 41 is a placeholder citation inserted during planning to mark the "2025 MR study of osteomyelitis and infective endocarditis" referenced in the Introduction (ref. 14 in text). The full published reference should be substituted at acceptance.*

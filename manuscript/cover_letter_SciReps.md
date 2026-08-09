@@ -26,4 +26,4 @@ Email: 547653312@qq.com | ORCID: 0000-0001-6752-7569
 
 ---
 
-*Notes for submission:* insert date; add co-author list and their affiliations above the corresponding-author line if applicable; confirm the exact wording of the LD-clumping sentence once the sensitivity analysis output is finalised.
+*Notes for submission:* insert date; add co-author list and their affiliations above the corresponding-author line if applicable; confirm the exact wording of the LD-clumping sentence once the sensitivity analysis output is finalised. A dedicated "Limitations" section (12 numbered items) is included after Methods, consistent with common practice for Mendelian randomization articles; it can be merged into the Discussion if the editorial office prefers the standard template.

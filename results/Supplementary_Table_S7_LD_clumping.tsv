@@ -1,3 +1,6 @@
+NOTE: Instrument counts in PART A are pre-harmonisation (as extracted and distance-pruned).
+Post-harmonisation counts entering each MR analysis are reported in Table 1 and Supplementary Table S2.
+
 PART A. Instrument counts before/after formal LD clumping (1000 Genomes Phase 3 EUR, r2<0.001, LDlink LDmatrix)
 trait	set	n_distance_pruned	n_after_LD_clump	n_removed	removed_rsids
 IL6R	genome-wide	4	2	2	rs3014860; rs12138773
