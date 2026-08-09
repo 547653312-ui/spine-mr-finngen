@@ -14,7 +14,7 @@ by remote BGZF random access.
 ## Quick start
 
 ```bash
-git clone https://github.com/<USERNAME>/spine-mr-finngen.git
+git clone https://github.com/547653312-ui/spine-mr-finngen.git
 cd spine-mr-finngen
 python -m venv venv
 source venv/bin/activate        # Windows: venv\Scripts\activate

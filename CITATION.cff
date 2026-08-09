@@ -6,14 +6,14 @@ abstract: >-
   predicted immune and cytokine traits (EBI GWAS Catalog) to five FinnGen R11
   osteomyelitis phenotypes, four of them spine-specific.
 authors:
-  - family-names: "[FAMILY NAME]"
-    given-names: "[GIVEN NAME]"
-    orcid: "https://orcid.org/0000-0000-0000-0000"
-    affiliation: "[AFFILIATION]"
+  - family-names: "Zhen"
+    given-names: "Tian"
+    orcid: "https://orcid.org/0000-0001-6752-7569"
+    affiliation: "Orthopedics department, The Fourth People's Hospital of Guiyang, China"
 version: "1.0.0"
 date-released: "2026-08-10"
 license: MIT
-repository-code: "https://github.com/<USERNAME>/spine-mr-finngen"
+repository-code: "https://github.com/547653312-ui/spine-mr-finngen"
 keywords:
   - Mendelian randomization
   - osteomyelitis
