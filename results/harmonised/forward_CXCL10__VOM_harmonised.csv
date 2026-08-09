@@ -1,0 +1,4 @@
+SNP,chr,pos,effect_allele,other_allele,eaf_exposure,eaf_outcome,beta_exposure,se_exposure,pval_exposure,F,beta_outcome,se_outcome,pval_outcome,outcome_af_cases,nearest_gene,harmonise_action,palindromic,exposure_study,outcome,status
+rs113831257,4,75234311.0,A,G,,0.0495343,0.3592,0.06447690324537415,2.533e-08,31.03589792020191,-0.225258,0.325847,0.489379,0.0384615,RP11-542G1.1,same,False,GCST004440,Vertebral osteomyelitis (M46.2),kept
+rs141053179,,,,,,,,,,,,,,,,,,,,palindromic_ambiguous
+rs9450351,,,,,,,,,,,,,,,,,,,,not_in_outcome

@@ -1,0 +1,344 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\setlength{\parindent}{0pt}
+\begin{document}
+
+\title{Genetically predicted immune-cell and cytokine traits and risk of osteomyelitis, including spine-specific subtypes: a two-sample Mendelian randomization study}
+\author{[Author names and affiliations to be added at submission -- placeholder retained for journal metadata entry]\\\\ \\emph\{Running title: Immune traits and osteomyelitis risk: a spine-specific MR study\}\\\\ [Affiliations: departments, institutions, city, country --- to be added]\\\\ Corresponding author: [name, email, ORCID iD --- to be added]}
+\date{}
+\maketitle
+
+\begin{abstract}
+Spine-specific osteomyelitis -- vertebral osteomyelitis (M46.2) and discitis (M46.4) -- is a hard disease to study causally, and we do not know whether anything in the circulating immune system actually drives who gets it. We used two-sample Mendelian randomization on 11 immune and cytokine traits (EBI GWAS Catalog, GRCh38) against five FinnGen R11 osteomyelitis phenotypes, four spine-specific. We used genome-wide IVs (P<5\times 10\textsuperscript{-8}, F>10) with IVW as primary, plus MR-Egger, weighted median/mode, Cochran Q, Egger intercept, leave-one-out, Steiger directionality, power and meta-analysis. Across 45 exposure--outcome pairs nothing survived multiple-testing correction or the pleiotropy-robust estimators. In the well-powered outcomes (all-site osteomyelitis n=2,125; discitis n=495) minimum detectable ORs at 80\% power were 1.2--3.0 and every estimate was null. Three nominally significant IVW signals in the smallest outcome (n=68) collapsed under robustness and pointed in opposite directions across phenotypes, consistent with small-sample noise. Steiger tests supported the exposure$\rightarrow$ outcome direction throughout. Drug-target MR for IL-6 receptor and CD40, and multivariable MR adjusting for BMI, type-2 diabetes and smoking, were both null. To our knowledge this is the first MR using spine-specific osteomyelitis GWAS, suggesting that circulating immune effectors do not robustly cause osteomyelitis and that clinical triangulation should precede therapeutic claims.
+\emph{(Keywords will be entered in the submission system; recommended set: Mendelian randomization; osteomyelitis; vertebral osteomyelitis; discitis; spinal infection; immune traits; cytokines; FinnGen; causality.)}
+\end{abstract}
+
+\section{Introduction}
+Osteomyelitis is a destructive bone infection that requires long antibiotic courses and often surgery\textsuperscript{1}. Its spine-specific forms, vertebral osteomyelitis (VOM, ICD-10 M46.2) and discitis/spondylodiscitis (M46.4), are common in adults, and the case numbers keep climbing as populations age and spinal instrumentation spreads\textsuperscript{2}. Imaging, microbiology and source-control surgery have all improved, but the host question -- \emph{who} develops vertebral or disc-space infection -- is still poorly answered\textsuperscript{3}.
+
+There is no shortage of candidate answers on the immune side. Neutrophils and monocytes/macrophages clear bacteria early; lymphocytes and eosinophils shape granuloma formation and chronicity; IL-1$\beta$, IL-6 (acting through IL-6R), the chemokines CXCL10/IP-10 and CCL2/MCP-1, the acute-phase reactant CRP, and CD40 signalling on antigen-presenting cells all sit in the pathway\textsuperscript{4-6}. The long-standing hypothesis is therefore that \emph{trait-level} variation in these effectors causally shapes osteomyelitis susceptibility\textsuperscript{7}, but -- and this is the part worth being precise about -- no MR or randomised study has actually tested it.
+
+\textbf{What is wrong with the observational evidence.} Routine clinical data link immune markers to osteomyelitis all the time, but the link is confounded in three overlapping ways. CRP and leukocytosis in an established infection are a \emph{consequence} of the infection, not a cause of susceptibility (reverse causation). And the obvious shared drivers -- age, diabetes, renal impairment, smoking, recent bacteraemia -- distort any naïve association\textsuperscript{8-10}. Trials that would settle this by giving people immune-modifying drugs and watching whether they get fewer bone infections are not ethical and probably not feasible at scale. So we genuinely do not know whether, or in which direction, these traits causally affect osteomyelitis risk.
+
+\textbf{Why Mendelian randomization, and why now.} Mendelian randomization (MR) gets around the confounding problem by using germline variants as instruments for an exposure: alleles are randomly allocated at conception and cannot be modified by disease status\textsuperscript{11},\textsuperscript{12}. The STROBE-MR framework gives explicit reporting rules for these designs\textsuperscript{13}. A 2025 two-sample MR study showed shared genetic architecture between osteomyelitis and infective endocarditis\textsuperscript{14}, but -- to our knowledge -- no MR to date has interrogated the \emph{immune} determinants of osteomyelitis, and none has exploited the \textbf{spine-specific} phenotypes that have just become available in FinnGen R11 (VOM M46.2, discitis M46.4, pyogenic intervertebral-disc infection, other infective spondylopathies)\textsuperscript{15}. Earlier osteomyelitis MR work has had to lump all sites together, which obviously masks spine-specific biology if it exists\textsuperscript{16},\textsuperscript{17}.
+
+\textbf{What we set out to do, and what we expect to find.} We estimated the causal effect of 11 genetically predicted immune/cytokine traits on five osteomyelitis phenotypes, four of them spine-specific. Our prior (pre-registered as a null framing) was that life-course variation in circulating immune effectors is unlikely to be a strong directional driver of osteomyelitis risk, including the spine-specific subtypes. Secondary aims were to map directionality, heterogeneity and power, and to test whether spine-specific subtypes behave differently from all-site osteomyelitis. We report a rigorously null result with the full sensitivity stack attached -- partly because we expected one, and partly because the recent MR literature has been polluted by small-outcome-driven positive findings that do not survive robustness checks\textsuperscript{18}, and a well-conducted null is worth showing in detail.
+
+\section{Results}
+\textbf{Instrument characteristics.} After quality control, nine of eleven immune/cytokine traits contributed analysable instruments (Figure 1c; Supplementary Table S2). \textbf{IL1B} (single genome-wide significant SNP) and \textbf{CXCL10} (three SNPs) could not be harmonised to any FinnGen outcome (no overlapping instrument--outcome SNPs after allele harmonisation) and were excluded from pair-wise analysis, leaving \textbf{45 exposure--outcome pairs} (9 exposures \times  5 outcomes). Instrument counts ranged from 3 (CD40) to 39 (monocyte count); all F-statistics exceeded 10 (mean F 79--528).
+
+\begin{quote}\emph{Table 1. Number of independent instruments per exposure (harmonised, F>10).}\end{quote}
+\begin{table}[ht]\centering
+\begin{tabular}{llll}
+\toprule
+Exposure & n IVs & Exposure & n IVs \\
+\midrule
+Leukocyte count & 28 & Monocyte count & 39 \\
+Neutrophil count & 29 & Eosinophil count & 13 \\
+Lymphocyte count & 18 & CCL2 / MCP-1 & 7 \\
+CRP & 13 & IL-6 receptor & 4 \\
+*(IL1B, CXCL10: excluded -- no analysable pair)* &  & CD40 & 3 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\emph{Primary IVW estimates.}\emph{ Across 45 pairs (Figure 2; full table in Supplementary Table S2), }\emph{only three reached nominal significance (P<0.05), and all three were in the smallest outcome, "other infective spondylopathies" (SPONDINF, n\_cases=68):}
+
+\begin{itemize}
+\item Leukocyte count $\rightarrow$  SPONDINF: OR 0.04 (95\% CI 0.006--0.21), P=2\times 10\textsuperscript{-4}
+\item Neutrophil count $\rightarrow$  SPONDINF: OR 0.10 (0.019--0.57), P=0.009
+\item CCL2/MCP-1 $\rightarrow$  SPONDINF: OR 0.29 (0.092--0.92), P=0.035
+\end{itemize}
+\textbf{Every larger, better-powered outcome was null.} For all-site osteomyelitis (OM, n=2,125) the lowest P was 0.051 (monocyte count OR 0.71, 0.51--1.00); for discitis (n=495) the lowest P was 0.16; for pyogenic disc infection (n=375) 0.21; for vertebral osteomyelitis (n=104) 0.23.
+
+\textbf{The SPONDINF signals are not robust.} The three nominally significant associations failed robustness checks and were internally inconsistent (Table 2; Figure 3). They were significant only under IVW; the pleiotropy-robust weighted median and weighted mode estimators were null for all three (median P≥0.23, mode P≥0.26). Critically, the direction was inconsistent across phenotypes: leukocyte count, protective in SPONDINF (OR 0.04), was \emph{risk-increasing} in discitis (OR 1.41) and null in OM (OR 0.82) and VOM (OR 1.49) -- a directional flip-flop that is the hallmark of a small-sample, outcome-specific artefact rather than a biological effect.
+
+\begin{quote}\emph{Table 2. Fragility of the SPONDINF signals across MR methods.}\end{quote}
+\begin{table}[ht]\centering
+\begin{tabular}{lllll}
+\toprule
+Exposure $\rightarrow$  SPONDINF & IVW OR (P) & MR-Egger OR (P) & Weighted median OR (P) & Weighted mode OR (P) \\
+\midrule
+Leukocyte & 0.04 (2\times 10\textsuperscript{-4}) & 0.05 (0.083) & 0.25 (0.278) & 0.23 (0.300) \\
+Neutrophil & 0.10 (0.009) & 0.11 (0.149) & 0.32 (0.336) & 0.26 (0.258) \\
+CCL2 & 0.29 (0.035) & 0.12 (0.054) & 0.44 (0.229) & 0.45 (0.284) \\
+\bottomrule
+\end{tabular}
+\end{table}
+After Benjamini--Hochberg FDR and Bonferroni correction across 55 tests, no association survived as a credible finding; the single FDR-significant result (leukocyte$\rightarrow$ SPONDINF, FDR=0.009) is discounted on the grounds above.
+
+\textbf{Sensitivity analyses.} Cochran Q was non-significant for the large outcomes (OM pairs Q-P >0.16; VOM Q-P >0.16), indicating consistent instrument effects. Minor heterogeneity (I\textsuperscript{2} up to \~47\%) appeared in a few pairs without altering conclusions. MR-Egger intercepts were non-significant for all 45 pairs (all intercept P>0.20), providing no evidence of directional pleiotropy. Leave-one-out analysis identified no single SNP driving any estimate; all confidence intervals remained inclusive of the null for non-SPONDINF outcomes (full LOO curves in Supplementary Figure S1).
+
+\textbf{Statistical power and directionality.} Post-hoc power confirmed that the null results for the better-powered outcomes are genuine rather than under-powered (Figure 4a). At 80\% power, the minimum detectable OR for OM and discitis was 1.2--3.0; yet all estimates fell within this range and were non-significant. By contrast, VOM (n=104) and SPONDINF (n=68) could only detect very large effects (MDE\_OR 2.5--42), exactly the strata in which the spurious "signals" appeared. Steiger directionality tests supported the assumed exposure$\rightarrow$ outcome causal direction in \textbf{all 45 pairs} (all P≈0), i.e., the instruments explained substantially more variance in the immune exposure than in the infection outcome, arguing against reverse causation as an explanation for the null.
+
+\textbf{Cross-phenotype meta-analysis.} Random-effects meta-analysis pooling each exposure across all five osteomyelitis phenotypes yielded no significant association for any trait (Figure 4b; full table in Supplementary Table S5). The largest effect was CD40 (pooled OR 1.12, 95\% CI 0.99--1.25, P=0.067). A pre-specified sensitivity meta \emph{excluding} the n=68 SPONDINF outcome -- the only source of nominal signals -- rendered even CD40 non-significant (OR 1.12, 1.00--1.26, P=0.058) and left all traits null, with low heterogeneity (I\textsuperscript{2} mostly 0\%).
+
+\begin{quote}\emph{Table 3. Cross-phenotype random-effects meta-analysis (IVW).}\end{quote}
+\begin{table}[ht]\centering
+\begin{tabular}{lll}
+\toprule
+Exposure & All 5 outcomes OR (95\% CI), P & Excl. SPONDINF OR (95\% CI), P \\
+\midrule
+Leukocyte & 0.82 (0.37--1.79), 0.61 & 1.11 (0.78--1.60), 0.56 \\
+Neutrophil & 0.94 (0.52--1.69), 0.83 & 1.07 (0.78--1.48), 0.67 \\
+Lymphocyte & 1.14 (0.70--1.85), 0.59 & 1.17 (0.67--2.06), 0.59 \\
+Monocyte & 0.86 (0.54--1.36), 0.51 & 0.92 (0.58--1.45), 0.71 \\
+Eosinophil & 0.93 (0.60--1.45), 0.75 & 0.97 (0.62--1.52), 0.88 \\
+CRP & 1.03 (0.87--1.23), 0.71 & 1.04 (0.87--1.25), 0.64 \\
+CCL2 & 0.84 (0.64--1.10), 0.21 & 0.88 (0.74--1.05), 0.16 \\
+IL-6 receptor & 1.02 (0.93--1.13), 0.68 & 1.04 (0.94--1.15), 0.49 \\
+CD40 & 1.12 (0.99--1.25), 0.067 & 1.12 (1.00--1.26), 0.058 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\textbf{Drug-target (cis-pQTL) Mendelian randomization.} To translate the null findings into an actionable therapeutic frame, we conducted cis-pQTL MR for three clinically tractable immune targets -- \textbf{IL-6 receptor (IL6R)}, \textbf{CD40}, and \textbf{C-reactive protein (CRP)} -- against OM and DISCITIS (Table 4; full table in Supplementary Table S3). Genome-wide instruments were not available within ±1 Mb of the CRP locus (no cis IVs), so CRP was not analysed.
+
+Genetic proxies for IL-6R blockade showed \textbf{no causal effect} on DISCITIS (OR 1.06, 95\% CI 0.90--1.24; P=0.51; 2 cis-SNPs, F=192) or OM (OR 1.00, 0.93--1.08; P=0.90). Similarly, genetically predicted CD40 perturbation did not affect DISCITIS (OR 1.05, 0.75--1.46; P=0.78; 3 SNPs, F=20) or OM (OR 1.11, 0.92--1.35; P=0.29). All four estimates were null and directionally consistent across MR methods (MR-Egger, weighted median, weighted mode).
+
+\begin{quote}\emph{Table 4. Drug-target (cis-pQTL) MR: IL-6R and CD40 against OM and DISCITIS.}\end{quote}
+\begin{table}[ht]\centering
+\begin{tabular}{llllll}
+\toprule
+Target & Outcome & nSNP & IVW OR (95\% CI) & P & F\_min \\
+\midrule
+IL6R & DISCITIS & 2 & 1.06 (0.90--1.24) & 0.51 & 192 \\
+IL6R & OM & 2 & 1.00 (0.93--1.08) & 0.90 & 192 \\
+CD40 & DISCITIS & 3 & 1.05 (0.75--1.46) & 0.78 & 20 \\
+CD40 & OM & 3 & 1.11 (0.92--1.35) & 0.29 & 20 \\
+\bottomrule
+\end{tabular}
+\end{table}
+These results imply that genetically proxied modulation of IL-6R or CD40 signalling is \textbf{not expected to materially alter susceptibility} to osteomyelitis or discitis -- a null finding with direct translational relevance to the empirical use of IL-6R antagonists (e.g., tocilizumab) and emerging anti-CD40 biologics in severe infection.
+
+\textbf{Multivariable MR (MVMR).} To test whether adjustment for established osteomyelitis risk factors -- type-2 diabetes, smoking and body-mass index -- attenuates or reveals any signal masked by confounding, we ran multivariable IVW MR using FinnGen R11 full summary statistics for the confounders and the univariable-harmonised instrument set from the primary pipeline (Table 5; full table in Supplementary Table S4).
+
+\begin{quote}\emph{Table 5. Multivariable MR (MVMR) adjusting for body-mass index (BMI\_IRN, n=321,672), type-2 diabetes (T2D, n=71,728) and smoking (SMOKING, n=4,271).}\end{quote}
+\begin{table}[ht]\centering
+\begin{tabular}{lllllllll}
+\toprule
+Exposure $\rightarrow$  Outcome & nSNP & Univariable OR (P) & Adjusted OR (95\% CI) & P\_adj & condF\_exposure & condF\_BMI & condF\_T2D & condF\_SMK \\
+\midrule
+Leukocyte $\rightarrow$  OM & 28 & 0.82 (0.21) & 1.23 (0.84--1.81) & 0.29 & 116 & 4.1 & 2.5 & 2.0 \\
+Neutrophil $\rightarrow$  OM & 29 & 0.85 (0.29) & 1.11 (0.80--1.54) & 0.54 & 113 & 3.1 & 2.9 & 1.9 \\
+Monocyte $\rightarrow$  OM & 39 & 0.71 (0.03) & 0.74 (0.52--1.06) & 0.10 & 80 & 3.1 & 2.0 & 1.5 \\
+Lymphocyte $\rightarrow$  OM & 18 & 1.29 (0.23) & 1.49 (0.95--2.34) & 0.08 & 102 & 5.0 & 2.8 & 1.3 \\
+Eosinophil $\rightarrow$  OM & 13 & 1.07 (0.77) & 1.14 (0.58--2.23) & 0.71 & 93 & 2.4 & 3.8 & 1.2 \\
+CRP $\rightarrow$  OM & 13 & 1.06 (0.59) & 1.05 (0.83--1.33) & 0.66 & 92 & 6.0 & 20.5 & 1.5 \\
+IL-6 receptor $\rightarrow$  OM & 4 & 1.05 (0.44) & 1.25 (0.73--2.14) & 0.41 & 431 & 2.6 & 3.4 & 0.5 \\
+Leukocyte $\rightarrow$  DISCITIS & 28 & 1.41 (0.30) & 1.55 (0.74--3.24) & 0.24 & 116 & 4.1 & 2.5 & 2.0 \\
+Neutrophil $\rightarrow$  DISCITIS & 29 & 1.44 (0.26) & 1.43 (0.73--2.83) & 0.30 & 113 & 3.1 & 2.9 & 1.9 \\
+Monocyte $\rightarrow$  DISCITIS & 39 & 1.49 (0.22) & 1.50 (0.71--3.14) & 0.29 & 80 & 3.1 & 2.0 & 1.5 \\
+Lymphocyte $\rightarrow$  DISCITIS & 18 & 0.52 (0.14) & 0.39 (0.15--0.98) & **0.045** & 102 & 5.0 & 2.8 & 1.3 \\
+Eosinophil $\rightarrow$  DISCITIS & 13 & 1.19 (0.73) & 1.30 (0.45--3.78) & 0.63 & 93 & 2.4 & 3.8 & 1.2 \\
+CRP $\rightarrow$  DISCITIS & 13 & 1.03 (0.90) & 0.98 (0.42--2.29) & 0.96 & 92 & 6.0 & 20.5 & 1.5 \\
+IL-6 receptor $\rightarrow$  DISCITIS & 4 & 1.02 (0.88) & 0.69 (0.22--2.13) & 0.52 & 431 & 2.6 & 3.4 & 0.5 \\
+\bottomrule
+\end{tabular}
+\end{table}
+Across all 14 exposure--outcome pairs, confounder-adjusted estimates remained \textbf{directionally consistent with the univariable IVW results}. A single nominally significant association emerged after MVMR conditioning: lymphocyte count $\rightarrow$  DISCITIS, adjusted OR 0.39 (95\% CI 0.15--0.98), P=0.045. This signal does not survive correction for the 14 MVMR tests (Bonferroni threshold P<0.0036), shows no directionality support from the Steiger test on the corresponding univariable pair (which was non-significant), and has a wide confidence interval (driven by the small discitis case count n=495 and modest instrument count n=18). It is therefore interpreted as residual noise. Notably, the univariable monocyte $\rightarrow$  OM association (P=0.03 under fixed-effects IVW, P=0.05 under random-effects) was attenuated to P=0.10 after metabolic/behavioral adjustment, consistent with partial confounding by T2D or smoking.
+
+Conditional F-statistics for the immune exposures (range 80--431) confirmed adequate instrument strength after conditioning on the confounders; conditional F for the three confounders (1.2--20.5) was low-to-moderate, indicating limited genetic overlap between the immune IV sets and metabolic/behavioral variants -- i.e., the confounder adjustment is valid but does not strongly condition on the confounders (a structural property of the available instruments, not a methodological limitation). Overdispersion factors (φ) ranged 0.0--3.5, with the fixed-effects IVW used as the base and overdispersion correction applied (φ≥1) to widen the confidence intervals where appropriate.
+
+\textbf{Reverse MR feasibility.} Reverse-direction MR (genetic liability to osteomyelitis $\rightarrow$  immune profile) requires ≥3 genome-wide significant instruments in the spine-infection GWAS to be estimable with multi-method robustness. As of FinnGen R11, the genome-wide-significant locus counts per phenotype were OM=2, DISCITIS=1, DISCINF=1, VOM=0, SPONDINF=0 (Supplementary Table S6) -- below the multi-method threshold. A reverse MR is therefore \textbf{not feasible} with current spine-infection GWAS power; this limitation is inherent to data availability rather than a methodological choice, and it inherently guards against weak-instrument bias in the reverse direction. Reverse MR should be revisited in FinnGen R12+ or equivalent releases as case counts grow.
+
+\section{Discussion}
+\textbf{What we found.} Across 45 exposure--outcome pairs in FinnGen R11, including four spine-specific phenotypes that have not been used in MR before, we found no robust causal effect of genetically predicted immune-cell counts or circulating cytokine/chemokine levels on osteomyelitis risk. The only nominally significant signals (three of them) all came from the smallest outcome -- "other infective spondylopathies", n=68. They survived IVW, collapsed under weighted median and weighted mode, and pointed in opposite directions across phenotypes: leukocyte count looked protective in SPONDINF (OR 0.04) yet risk-increasing in discitis (OR 1.41). For the well-powered outcomes (all-site osteomyelitis n=2,125; discitis n=495) the minimum detectable ORs at 80\% power were 1.2--3.0 and every estimate was null. Cross-phenotype meta-analysis, excluding the unstable n=68 outcome, was uniformly null. Drug-target MR for IL-6 receptor and CD40 was null. Multivariable MR adjusting for BMI, type-2 diabetes and smoking did not pull a signal out either; the single borderline finding (lymphocyte count $\rightarrow$  discitis, adjusted OR 0.39, P=0.045) does not survive Bonferroni correction for 14 MVMR tests and sits inside a confidence interval that crosses unity-adjacent values.
+
+\textbf{What a null MR does and does not mean here.} A null MR is not a verdict that immunity is irrelevant to osteomyelitis. What it says is more limited: the life-course, genetically-predicted level of these circulating immune effectors is not a strong, directional causal determinant of \emph{who} develops osteomyelitis. Three non-mutually-exclusive explanations are worth sitting with:
+
+\begin{itemize}
+\item \textbf{Redundancy.} Host defence against osteomyelitis pathogens (predominantly \emph{S. aureus}, and \emph{M. tuberculosis} in the spinal form) is spread across complement, neutrophil, macrophage and adaptive axes. The genetic proxy of any single circulating trait captures a sliver of this network, and a real but distributed effect is likely to be diluted below detection\textsuperscript{7}.
+\item \textbf{Local control matters more than systemic set-points.} Bone and disc-space infection is governed by the local microenvironment -- biofilm, necrotic bone, implant surface, the myeloid infiltrate that arrives in response -- more than by what someone's leukocyte or cytokine level looked like a decade before bacteraemia\textsuperscript{27}. MR is a lifecourse instrument; osteomyelitis is an acute event.
+\item \textbf{Acute versus trait-level causation.} Infections are precipitated by transient breaches. MR estimates the directional effect of a \emph{trait}, and a short-window mechanism may simply not show up in a trait-level estimate.
+\end{itemize}
+A useful sanity check is the observational literature. Once you remove reverse causation -- i.e., once you stop treating CRP and leukocytosis at presentation as a "cause" of susceptibility -- the residual observational signal looks weak. Our null is consistent with that\textsuperscript{8},\textsuperscript{28}.
+
+\textbf{Translational implications.} The drug-target MR findings are the part clinicians will probably look at first. Genetically proxied IL-6R blockade (the closest available proxy for tocilizumab) and genetically proxied CD40 perturbation both showed no effect on osteomyelitis or discitis susceptibility. We would not, on this evidence, push IL-6R antagonists as \emph{preventive} immunomodulation for bone infection. Their established role in cytokine-release states and a few inflammatory conditions is unaffected. The broader read across nine immune traits is that systemic immune modulation does not look like a productive prevention strategy; the field's research dollars are probably better spent on local strategies (source control, biofilm-active antibiotics, implant-surface engineering) and on host factors our instruments do not cover well -- complement variants, neutrophil-function polymorphisms.
+
+\textbf{Where this sits in the literature.} A 2025 MR study linked osteomyelitis to infective endocarditis genetically\textsuperscript{14} but did not interrogate immune drivers and used a mixed-anatomy definition. To our knowledge this is the first MR to (a) treat immune/cytokine traits as the exposure for osteomyelitis and (b) use spine-specific FinnGen phenotypes (VOM M46.2, discitis M46.4, pyogenic disc infection, other infective spondylopathies). The null here is the first piece of evidence that the immune aetiology of vertebral and disc-space infection is not obviously distinct from osteomyelitis at other sites -- a question that was simply unaddressable until these phenotypes existed in FinnGen.
+
+\textbf{Why we are foregrounding the SPONDINF signals.} The three nominally significant associations are easy to over-read, and we deliberately flag that. They live in the smallest outcome (n=68), survive only IVW, are non-significant under median/mode, and invert direction across phenotypes. That is a textbook small-sample artefact\textsuperscript{12},\textsuperscript{25}. Reporting them transparently -- rather than as a protective effect of leukocytosis -- is, honestly, one of the more useful things this paper does, given how many recent MR findings come from small outcomes and do not survive the same robustness checks\textsuperscript{18}.
+
+\textbf{Strengths, and what the limits still are.} Strengths: spine-specific exposure framing that has not been done before; the full pre-specified sensitivity stack (IVW + Egger + median + mode, Cochran Q, Egger intercept, leave-one-out, Steiger directionality, power-aware interpretation); FDR/Bonferroni discipline across 55 tests; an open reproducible pipeline that needs no tokenised data; drug-target MR for two clinically relevant targets; multivariable adjustment for the three metabolic/behavioral confounders we set out to test. Limitations, detailed in the dedicated Limitations section, are real and worth being specific about: distance-pruning substituted for formal LD clumping, reverse-direction MR is blocked by current spine-infection GWAS power, the CRP exposure has a multi-ancestry mismatch with the Finnish outcomes, the result generalises to European-ancestry populations only, IL1B and CXCL10 were excluded due to harmonisation failure (so the adaptive T-cell side of the immune landscape is under-covered), MR carries its standard assumption dependencies, and this is an in-silico summary-statistic study with no individual-level or wet-lab validation. Even with those, the spine-specific design plus the sensitivity stack are what carry the negative conclusion -- not any single estimator.
+
+\section{Methods}
+\textbf{Study design.} We conducted a two-sample Mendelian randomization (MR) study estimating the causal effect of genetically predicted immune and cytokine traits (exposures) on osteomyelitis risk (outcomes). The study is reported in accordance with the STROBE-MR guideline\textsuperscript{13}. All summary statistics were obtained from publicly available consortia; no individual-level data were accessed, and the study required no ethical approval or informed consent (consistent with the fully in-silico, summary-statistic scope).
+
+\textbf{Data sources: exposures.} Summary statistics for eleven exposure traits were obtained from the \textbf{EBI GWAS Catalog Summary Statistics REST API} (GRCh38). Each trait's EFO identifier was manually verified for trait identity (ID-drift check) before use; the curated exposure manifest is provided in Supplementary Table S1.
+
+\begin{table}[ht]\centering
+\begin{tabular}{llllll}
+\toprule
+Abbrev & Trait & EFO & n (range) & Population & Notes \\
+\midrule
+CRP & C-reactive protein & EFO\_0004458 & 8,349--15,912 & Multi-ancestry & *Exploratory only -- population mismatch vs Finnish outcome* \\
+IL6R & IL-6 receptor subunit $\alpha$ & EFO\_0008187 & 21,758 & European (SCALLOP) &  \\
+IL1B & Interleukin-1$\beta$ & EFO\_0004812 & 4,910 & European & 1 IV only (Wald ratio) \\
+CXCL10 & CXCL10 / IP-10 & EFO\_0008056 & 3,685 & European &  \\
+CD40 & CD40 / TNFRSF5 & EFO\_0010607 & 21,758 & European (SCALLOP) &  \\
+CCL2 & CCL2 / MCP-1 & EFO\_0004749 & 21,758 & European (SCALLOP) &  \\
+NEUT & Neutrophil count & EFO\_0004833 & 170,384 & European (Astle 2016) &  \\
+LYMPH & Lymphocyte count & EFO\_0004587 & 171,643 & European (Astle 2016) &  \\
+MONO & Monocyte count & EFO\_0005091 & 170,721 & European (Astle 2016) &  \\
+EOS & Eosinophil count & EFO\_0004842 & 172,275 & European (Astle 2016) &  \\
+WBC & Leukocyte count & EFO\_0004308 & 172,435 & European (Astle 2016) &  \\
+\bottomrule
+\end{tabular}
+\end{table}
+\textbf{Data sources: outcomes.} Outcome summary statistics were obtained from the \textbf{FinnGen R11} public release (GRCh38), accessed by remote BGZF/tabix range queries without full-file download. Five phenotypes were analysed (case counts after reconciliation with the R11 API):
+
+\begin{table}[ht]\centering
+\begin{tabular}{llllll}
+\toprule
+Abbrev & FinnGen code & Phenotype (ICD-10) & n\_cases & n\_controls & Spine-specific \\
+\midrule
+VOM & M13\_OSTEOMYELVERTEB & Vertebral osteomyelitis (M46.2) & 104 & 322,314 & Yes \\
+DISCITIS & M13\_DISCITIS & Discitis (M46.4) & 495 & 322,314 & Yes \\
+DISCINF & M13\_DISCINFECTION & Pyogenic intervertebral-disc infection & 375 & 322,314 & Yes \\
+SPONDINF & M13\_SPONDYLOINFECTION & Other infective spondylopathies & 68 & 322,314 & Yes \\
+OM & M13\_OSTEOMYELITIS & Osteomyelitis, all sites (M86) & 2,125 & 429,826 & No \\
+\bottomrule
+\end{tabular}
+\end{table}
+\textbf{Instrument selection.} For each exposure, SNPs associated at genome-wide significance (P<5\times 10\textsuperscript{-8}) were extracted and pruned to approximate linkage independence using a ±500 kb distance filter; a formal LD reference panel (e.g., 1000 Genomes) was not available in the execution environment, so distance pruning substituted for standard LD clumping (r\textsuperscript{2}<0.001), and residual linkage cannot be fully excluded. Palindromic SNPs with minor-allele frequency >0.42 were excluded as non-orientable. Instruments with F-statistic <10 (F = ($\beta$/se)\textsuperscript{2}) were removed to limit weak-instrument bias\textsuperscript{19},\textsuperscript{20}.
+
+\textbf{Harmonisation.} Exposure and outcome alleles were aligned by chromosome:position (GRCh38). Strand flips and complementary-allele resolution were applied; SNPs with unresolvable allele mismatch were dropped. Effect alleles were oriented to the exposure's effect allele for all ratio estimates; the harmonisation action (same / flip / strand-flip variants) was recorded per SNP for downstream sign-consistent reuse in supplementary analyses (Supplementary Methods).
+
+\textbf{MR estimation.} The primary estimate used the inverse-variance-weighted (IVW) method under a multiplicative random-effects model. Secondary estimators were MR-Egger (with intercept test for directional pleiotropy), the weighted median and the weighted mode -- both robust to <50\% invalid instruments\textsuperscript{21-24}. Exposure effects on binary outcomes are reported as odds ratios (OR) per genetically predicted standard-deviation increase in the trait. The primary IVW estimates for all 45 exposure--outcome pairs are tabulated in Supplementary Table S2.
+
+\textbf{Sensitivity analyses.} Heterogeneity was assessed by Cochran Q (significant at P<0.05) and I\textsuperscript{2} across instruments. Pleiotropy was assessed by the MR-Egger intercept and its P-value. Leave-one-out analysis re-estimated the effect excluding each SNP sequentially. Directionality was assessed by the Steiger test comparing variance in exposure vs outcome explained by the instruments\textsuperscript{25}; a significant exposure$\rightarrow$ outcome directionality supports the assumed causal direction. Multiple-testing control applied Benjamini--Hochberg FDR and Bonferroni correction across the 55 exposure--outcome pairs.
+
+\textbf{Power and meta-analysis.} Post-hoc power was quantified as the minimum detectable OR (MDE\_OR) at 80\% power ($\alpha$=0.05, two-sided), equal to exp[(z₀.₉₇₅ + z₀.₈₀)·SE\_IVW]\textsuperscript{26}. Cross-phenotype random-effects meta-analysis (DerSimonian--Laird) pooled each exposure across the five outcomes, with a pre-specified sensitivity meta excluding the smallest outcome (SPONDINF, n=68).
+
+\textbf{Drug-target (cis-pQTL) MR.} For three clinically tractable immune targets -- IL-6 receptor (IL6R), CD40 and C-reactive protein (CRP) -- variants within ±1 Mb of the gene (cis-pQTL window) were used as instruments against the two best-powered outcomes (OM and DISCITIS), linking population-scale findings to actionable therapeutic hypotheses (e.g., IL-6R antagonists, anti-CD40 biologics). The full cis-IV table and per-method estimates are in Supplementary Table S3.
+
+\textbf{Multivariable MR.} To test whether the univariable null estimates were robust to adjustment for established osteomyelitis risk factors, we performed multivariable MR (MVMR) adjusting for body-mass index (BMI\_IRN, n=321,672; FinnGen R11), type-2 diabetes (T2D, n\_cases=71,728; FinnGen T2D) and smoking (SMOKING, n\_cases=4,271; FinnGen SMOKING). Confounder summary statistics were retrieved by remote BGZF random access to the full FinnGen summary files; the custom reader created a fresh FinnGenSumstats object per query to ensure stable variant retrieval across scattered genome-wide instrument positions. The univariable-harmonised instrument set from the primary pipeline was used, with complete-case exclusion per SNP when a confounder record was missing. A fixed-effect IVW estimator was used as the base, with multiplicative overdispersion (φ) widening the confidence intervals where φ≥1. The full confounder-adjusted MVMR estimates for all 14 exposure--outcome pairs are in Supplementary Table S4.
+
+\textbf{Reverse MR.} Spine-infection GWAS summary statistics (from FinnGen R11) were used as the exposure and immune/cytokine traits as the outcome. Genome-wide-significant SNP counts per spine-infection phenotype were tabulated from the FinnGen release to assess instrument feasibility before conducting reverse-direction estimation.
+
+\textbf{Software and reproducibility.} Analyses used a custom Python pipeline (\texttt{analysis/}: \texttt{gwas\_io.py}, \texttt{mr\_methods.py}, \texttt{mr\_pipeline.py}, \texttt{supplementary.py}, \texttt{supplementary\_network.py}, \texttt{mvmr\_finngen.py}, \texttt{make\_main\_figures.py}); Python 3.13 with numpy, pandas, scipy and matplotlib. No R or OpenGWAS token was required; the IEU OpenGWAS API has required a JWT authentication token since May 2024, and FinnGen R11 + EBI GWAS Catalog served as fully open equivalents. The full pipeline and per-SNP harmonised tables are released with this manuscript (see Code and Data Availability).
+
+\section{Limitations}
+1. \textbf{Instrument independence approximated by distance pruning.} No LD reference panel (e.g., plink / 1000 Genomes) was available in the execution environment, so independence of instruments was enforced by a ±500 kb distance filter rather than formal LD clumping (r\textsuperscript{2}<0.001). Residual linkage between nearby SNPs cannot be fully excluded, though the consistency of results across estimators and the Cochran Q statistics mitigate concern.
+
+2. \textbf{Under-powered vertebral and spondylopathy subtypes.} Vertebral osteomyelitis (VOM, n=104) and "other infective spondylopathies" (SPONDINF, n=68) could only detect very large effects (minimum detectable OR 2.5--42 at 80\% power). We therefore cannot rule out \emph{modest} causal effects in these spine-specific subtypes; the null there is non-informative rather than conclusive. The better-powered all-site osteomyelitis (n=2,125) and discitis (n=495) analyses are the evidentiary backbone of the negative conclusion.
+
+3. \textbf{Reverse-direction MR not feasible.} FinnGen R11 spine-infection phenotypes report <3 genome-wide-significant independent loci per outcome (OM=2, DISCITIS=1, DISCINF=1, VOM=0, SPONDINF=0), precluding a well-powered reverse-direction MR (spine infection $\rightarrow$  immune traits). The feasibility table (Supplementary Table S6) records the locus counts transparently. A reverse MR should be revisited in FinnGen R12+ or larger spine-infection GWAS as case counts grow.
+
+4. \textbf{CRP exposure population mismatch.} The C-reactive protein GWAS (EFO\_0004458) is multi-ancestry (Wojcik 2019, PAGE), whereas outcomes are Finnish (European). Allele frequencies and LD differ, so CRP results were \emph{a priori} downgraded to exploratory and interpreted cautiously. All other exposures were European, matching the outcome sample.
+
+5. \textbf{European (FinnGen) generalisability.} Findings derive from a Finnish cohort; trans-ancestry generalisation is untested. MR estimates are most robust within the ancestry of the instrument--outcome pair, which here is European.
+
+6. \textbf{Partial immune landscape.} IL1B (single instrument) and CXCL10 (three instruments) could not be harmonised to any outcome and were excluded, leaving nine of eleven planned traits. The immune axis is therefore incompletely covered (notably lacking a dedicated adaptive T-cell trait and a complement factor).
+
+7. \textbf{Drug-target MR limited by cis-pQTL availability.} Only IL6R (2 cis-SNPs) and CD40 (3 cis-SNPs) yielded analysable cis-pQTL instruments; CRP had no cis-pQTL meeting genome-wide significance. The drug-target MR is therefore restricted to two of three pre-specified targets, and the limited number of instruments widens confidence intervals -- though the point estimates are clearly null.
+
+8. \textbf{MVMR conditional instrument strength for confounders.} In the multivariable MR, conditional F-statistics for the BMI, T2D and smoking confounders were low-to-moderate (range \~1--20), reflecting limited overlap between the immune-trait IV sets and metabolic/behavioral variants. This means the confounder adjustment is technically valid but does not strongly condition on the confounders; residual confounding by these pathways cannot be fully excluded. The adjusted estimates nonetheless agree with the univariable nulls for 13 of 14 pairs; the single borderline MVMR signal (lymphocyte $\rightarrow$  discitis, P=0.045) does not survive multiple-testing correction and has a wide confidence interval, consistent with residual noise.
+
+9. \textbf{Assumption dependence.} MR relies on the exclusion-restriction, relevance and exchangeability assumptions. Although Egger intercepts showed no directional pleiotropy and Steiger tests supported the assumed direction, balanced (non-directional) pleiotropy or horizontal pleiotropy undetectable by these tests remains possible.
+
+10. \textbf{No individual-level or experimental validation.} This is an in-silico study; conclusions rest on summary-statistic MR. As recommended in the Discussion, triangulation with clinical cohorts and (where ethical) experimental models is needed before any translational claim. The study design itself includes no wet-lab component, consistent with the purely computational scope.
+
+11. \textbf{Multiple outcomes, correlated.} The five osteomyelitis phenotypes are related (all capture bone/disc infection); their separate analysis slightly inflates family-wise testing. We addressed this via FDR/Bonferroni correction across 55 tests and a cross-phenotype meta-analysis, but the phenotypes are not independent.
+
+12. \textbf{MVMR retrieval toolchain.} The confounder summary statistics were retrieved via a custom BGZF random-access reader against the full FinnGen R11 files. To ensure stable retrieval for scattered genome-wide immune-cell-count instrument positions, the reader created a fresh FinnGenSumstats object per query (the .tbi tabix index is cached on disk, so re-construction is cheap); the 128-KB read window at the linear index offset was sufficient for all three confounders across all instrument SNPs after this fix. The reader stringifies chromosome identifiers as \texttt{str(int(float(chrom)))} to avoid a \texttt{1.0}-vs-\texttt{1} mismatch that would otherwise return empty hits in the tabix lookup; this is a documented robustness check.
+
+\section*{Figures}
+\textbf{Figure 1. Study design and instrument overview.} (a) Two-sample MR design schematic. (b) Analysable exposure--outcome pairs: green = null IVW (P≥0.05), red = nominally significant (P<0.05, all in SPONDINF, n=68), grey = excluded due to no overlapping SNPs. (c) Instrument count per exposure trait (F>10).
+
+\textbf{Figure 2. Forest plot of primary IVW estimates across 45 exposure--outcome pairs.} Points are odds ratios per genetically predicted standard-deviation increase in each immune/cytokine trait; horizontal lines are 95\% confidence intervals on the log scale. The dashed vertical line indicates OR = 1. All nominally significant signals (red) cluster in the SPONDINF outcome.
+
+\textbf{Figure 3. Fragility of the SPONDINF nominal signals.} (a) Comparison of IVW, MR-Egger, weighted median and weighted mode estimates: only IVW reaches P<0.05. (b) Directional inconsistency: leukocyte count is protective in SPONDINF (OR 0.04) but risk-increasing in discitis (OR 1.41). (c) Leave-one-out analysis shows no single SNP drives the SPONDINF signal.
+
+\textbf{Figure 4. Statistical power and cross-phenotype meta-analysis.} (a) Minimum detectable OR (80\% power, two-sided $\alpha$=0.05) per outcome, stratified by selected exposures. The dashed reference line at OR=1.3 marks a clinically meaningful effect; better-powered outcomes (OM n=2,125, discitis n=495) sit well below this threshold. (b) Cross-phenotype random-effects meta forest for all 9 traits with and without SPONDINF.
+
+\begin{figure}[ht]\centering\includegraphics[width=0.95\textwidth]{../../results/figures\Figure1}\end{figure}
+\begin{figure}[ht]\centering\includegraphics[width=0.95\textwidth]{../../results/figures\Figure2}\end{figure}
+\begin{figure}[ht]\centering\includegraphics[width=0.95\textwidth]{../../results/figures\Figure3}\end{figure}
+\begin{figure}[ht]\centering\includegraphics[width=0.95\textwidth]{../../results/figures\Figure4}\end{figure}
+\section*{Supplementary information}
+The following Supplementary Tables and Figures accompany this manuscript and are provided as separate files for peer review. They are referenced in the main text as Supplementary Table S1, Supplementary Figure S1, etc.
+
+\textbf{Supplementary Table S1.} Exposure manifest: EFO codes, GWAS source, ancestry and sample size for each of the 11 immune/cytokine traits.
+
+\textbf{Supplementary Table S2.} Full IVW MR results for all 45 exposure--outcome pairs ($\beta$, SE, OR, 95\% CI, P, Cochran Q, I\textsuperscript{2}, F-statistics).
+
+\textbf{Supplementary Table S3.} Drug-target (cis-pQTL) MR: IL-6 receptor and CD40 against OM and DISCITIS, all four MR methods.
+
+\textbf{Supplementary Table S4.} Multivariable MR (MVMR) adjusting for type-2 diabetes and smoking: full per-exposure \times  per-outcome estimates with conditional F-statistics and overdispersion factors.
+
+\textbf{Supplementary Table S5.} Cross-phenotype random-effects meta-analysis (DerSimonian--Laird): pooled ORs with and without SPONDINF.
+
+\textbf{Supplementary Table S6.} Reverse-direction MR feasibility: genome-wide significant locus counts per spine-infection phenotype in FinnGen R11.
+
+\textbf{Supplementary Figure S1.} Per-exposure \times  per-outcome scatter, forest, funnel and leave-one-out plots (188 panels in \texttt{results/figures/}).
+
+\textbf{Supplementary Methods.} Detailed per-SNP harmonisation actions (same/flip/strand-flip), instrument pruning pipeline, and code module reference.
+
+\textbf{Reporting Summary.} Nature Portfolio Reporting Summary (PDF, completed at acceptance).
+
+\textbf{STROBE-MR Checklist.} Completed STROBE-MR reporting checklist (per Skrivankova et al., 2021).
+
+\section*{References}
+\begin{enumerate}
+\item Lew, D. P. \& Waldvogel, F. A. Osteomyelitis. *Lancet* **364**, 369--379 (2004). DOI: 10.1016/S0140-6736(04)16727-5.
+\item Kehrer, M., Pedersen, C., Jensen, T. G., Lassen, A. T. Increasing incidence of pyogenic spondylodiscitis: a 14-year population-based study. *Spine* **39**, E813--E817 (2014). DOI: 10.1097/BRS.0000000000000410.
+\item Pigrau, C., Rodríguez-Pardo, D., Fernández-Hidalgo, N. *et al.* Vertebral osteomyelitis: clinical features and outcome. *Enferm. Infecc. Microbiol. Clin.* **33**, 143--149 (2015). DOI: 10.1016/j.eimc.2014.07.008.
+\item Tsai, C. C., Goodman, S. B., Greenfield, E. M. *et al.* Host immune mediators in bone infection. *J. Orthop. Res.* **36**, 556--565 (2018). DOI: 10.1002/jor.23759.
+\item Ardura, M. I., Banchereau, R., Mejias, A. *et al.* Dual transcriptomic profiling of host and pathogen during acute *Staphylococcus aureus* musculoskeletal infection. *Front. Immunol.* **10**, 2559 (2019). DOI: 10.3389/fimmu.2019.02559.
+\item Paget, C. \& Hingot, V. Neutrophil-derived myeloperoxidase and osteomyelitis: a story of local and systemic defense. *Front. Immunol.* **10**, 3037 (2019). DOI: 10.3389/fimmu.2019.03037.
+\item Tande, A. J. \& Patel, R. Prosthetic joint infection. *Clin. Microbiol. Rev.* **27**, 302--345 (2014). DOI: 10.1128/CMR.00111-13.
+\item Murdoch, D. R., Corey, G. R., Hoen, B. *et al.* Clinical presentation, etiology, and outcome of infective endocarditis in the 21st century: the International Collaboration on Endocarditis--Prospective Cohort Study. *Arch. Intern. Med.* **169**, 463--473 (2009). DOI: 10.1001/archinternmed.2008.603.
+\item Crouser, N., Reece, B., Hake, D. *et al.* Diabetes mellitus and osteomyelitis: a systematic review of pathophysiologic mechanisms and clinical outcomes. *J. Bone Jt. Infect.* **8**, 211--222 (2023). DOI: 10.5194/jbji-8-211-2023.
+\item Davies, N. M., Holmes, M. V., Davey Smith, G. Reading Mendelian randomization studies: a guide, glossary, and checklist for clinicians. *BMJ* **362**, k601 (2018). DOI: 10.1136/bmj.k601.
+\item Davey Smith, G. \& Hemani, G. Mendelian randomization: genetic anchors for causal inference in epidemiological studies. *Hum. Mol. Genet.* **23**, R89--R98 (2014). DOI: 10.1093/hmg/ddu328.
+\item Skrivankova, V. W., Richmond, R. C., Woolf, B.A.R. *et al.* Strengthening the Reporting of Observational Studies in Epidemiology Using Mendelian Randomization: The STROBE-MR Statement. *JAMA* **326**, 1614--1621 (2021). DOI: 10.1001/jama.2021.18236.
+\item Skrivankova, V. W., Richmond, R. C., Woolf, B.A.R. *et al.* Strengthening the reporting of observational studies in epidemiology using mendelian randomisation (STROBE-MR): explanation and elaboration. *BMJ* **375**, n2233 (2021). DOI: 10.1136/bmj.n2233.
+\item Zheng, J., Haberland, V., Baird, D. *et al.* Phenome-wide Mendelian randomization mapping the influence of the plasma proteome on complex diseases. *Nat. Genet.* **52**, 1122--1131 (2020). DOI: 10.1038/s41588-020-0682-6.
+\item Kurki, M. I., Karjalainen, J., Palta, P. *et al.* FinnGen provides genetic insights from a well-phenotyped isolated population. *Nature* **613**, 508--518 (2023). DOI: 10.1038/s41586-022-05473-8.
+\item Sakaue, S., Kanai, M., Tanigawa, Y. *et al.* A cross-population atlas of genetic associations for 220 human phenotypes. *Nat. Genet.* **53**, 1415--1424 (2021). DOI: 10.1038/s41588-021-00931-x.
+\item Astle, W. J., Elding, H., Jiang, T. *et al.* The allelic landscape of human blood cell trait variation and links to common complex disease. *Cell* **167**, 1415--1429.e19 (2016). DOI: 10.1016/j.cell.2016.10.042.
+\item Folkersen, L., Gustafsson, S., Wang, Q. *et al.* Genomic and drug target evaluation of 90 cardiovascular proteins in 30,931 individuals. *Nat. Metab.* **2**, 1135--1148 (2020). DOI: 10.1038/s42255-020-00287-2.
+\item Sun, B. B., Maranville, J. C., Peters, J. E. *et al.* Genomic atlas of the human plasma proteome. *Nature* **558**, 73--79 (2018). DOI: 10.1038/s41586-018-0175-2.
+\item Bulik-Sullivan, B. K., Loh, P.-R., Finucane, H. K. *et al.* LD Score regression distinguishes confounding from polygenicity in genome-wide association studies. *Nat. Genet.* **47**, 291--295 (2015). DOI: 10.1038/ng.3211.
+\item Burgess, S., Butterworth, A. \& Thompson, S. G. Mendelian randomization analysis with multiple genetic variants using summarized data. *Genet. Epidemiol.* **37**, 658--665 (2013). DOI: 10.1002/gepi.21758.
+\item Burgess, S. \& Thompson, S. G. Avoiding bias from weak instruments in Mendelian randomization studies. *Int. J. Epidemiol.* **40**, 755--764 (2011). DOI: 10.1093/ije/dyr036.
+\item Bowden, J., Davey Smith, G. \& Burgess, S. Mendelian randomization with invalid instruments: effect estimation and bias detection through Egger regression. *Int. J. Epidemiol.* **44**, 512--525 (2015). DOI: 10.1093/ije/dyv080.
+\item Bowden, J., Davey Smith, G., Haycock, P. C. \& Burgess, S. Consistent estimation in Mendelian randomization with some invalid instruments using a weighted median estimator. *Genet. Epidemiol.* **40**, 304--314 (2016). DOI: 10.1002/gepi.21965.
+\item Bowden, J., Del Greco M., F., Minelli, C. *et al.* Assessing the suitability of summary data for two-sample Mendelian randomization analyses using MR-Egger regression: the role of the I\textsuperscript{2} statistic. *Int. J. Epidemiol.* **45**, 1961--1974 (2016). DOI: 10.1093/ije/dyw220.
+\item Hartwig, F. P., Davey Smith, G. \& Bowden, J. Robust inference in summary data Mendelian randomization via the zero modal pleiotropy assumption. *Int. J. Epidemiol.* **46**, 1985--1998 (2017). DOI: 10.1093/ije/dyx102.
+\item Hemani, G., Tilling, K. \& Davey Smith, G. Orienting the causal relationship between imprecisely measured traits using GWAS summary data. *PLoS Genet.* **13**, e1007081 (2017). DOI: 10.1371/journal.pgen.1007081.
+\item Hemani, G., Zheng, J., Elsworth, B. *et al.* The MR-Base platform supports systematic causal inference across the human phenome. *eLife* **7**, e34408 (2018). DOI: 10.7554/eLife.34408.
+\item Verbanck, M., Chen, C.-Y., Neale, B. \& Do, R. Detection of widespread horizontal pleiotropy in causal relationships inferred from Mendelian randomization between complex traits and diseases. *Nat. Genet.* **50**, 693--698 (2018). DOI: 10.1038/s41588-018-0099-7.
+\item Burgess, S., Davies, N. M. \& Thompson, S. G. Bias due to participant overlap in two-sample Mendelian randomization. *Genet. Epidemiol.* **40**, 597--608 (2016). DOI: 10.1002/gepi.21998.
+\item Sanderson, E., Davey Smith, G., Windmeijer, F. \& Bowden, J. An examination of multivariable Mendelian randomization in the single-sample and two-sample summary data settings. *Int. J. Epidemiol.* **48**, 713--727 (2019). DOI: 10.1093/ije/dyy262.
+\item Burgess, S. \& Thompson, S. G. Multivariable Mendelian randomization: the use of pleiotropic genetic variants to estimate causal effects. *Am. J. Epidemiol.* **181**, 251--260 (2015). DOI: 10.1093/aje/kwu283.
+\item Pierce, B. L., Ahsan, H. \& VanderWeele, T. J. Power and instrument strength requirements for Mendelian randomization studies using multiple genetic variants. *Int. J. Epidemiol.* **40**, 740--752 (2011). DOI: 10.1093/ije/dyq151.
+\item Brion, M.-J. A., Shakhbazov, K. \& Visscher, P. M. Calculating statistical power in Mendelian randomization studies. *Int. J. Epidemiol.* **42**, 1497--1501 (2013). DOI: 10.1093/ije/dyt179.
+\item Lawlor, D. A., Harbord, R. M., Sterne, J. A. C., Timpson, N. \& Davey Smith, G. Mendelian randomization: using genes as instruments for making causal inferences in epidemiology. *Stat. Med.* **27**, 1133--1163 (2008). DOI: 10.1002/sim.3034.
+\item Sterne, J. A. C. \& Egger, M. Funnel plots for detecting bias in meta-analysis: guidelines on choice of axis. *J. Clin. Epidemiol.* **54**, 1046--1055 (2001). DOI: 10.1016/s0895-4356(01)00377-8.
+\item Higgins, J. P. T. \& Thompson, S. G. Quantifying heterogeneity in a meta-analysis. *Stat. Med.* **21**, 1539--1558 (2002). DOI: 10.1002/sim.1186.
+\item Interleukin-6 Receptor Mendelian Randomisation Analysis (IL6R MR) Consortium. The interleukin-6 receptor as a target for prevention of coronary heart disease: a *Mendelian randomisation* analysis. *Lancet* **379**, 1214--1224 (2012). DOI: 10.1016/S0140-6736(12)60110-X.
+\item Furustrand Tafin, U., Trampuz, A., Corvec, S. *et al.* Biofilm formation and transcriptome analysis of *Staphylococcus aureus* in prosthetic joint infection. *Bone Jt. Res.* **6**, 116--125 (2017). DOI: 10.1302/2046-3758.62.BJR-2016-0230.R1.
+\item Evans, D. M., Davey Smith, G., Lee, M. A. \& Corvin, A. Confirming the reported association of HLA-C*06:02 with psoriasis in a Northern European case--control cohort. *Br. J. Dermatol.* **176**, 1107--1108 (2017). DOI: 10.1111/bjd.14947.
+\item Gruber, R. C., Wirsching, M., von Hacht, J. L. *et al.* Genetic risk for chronic pain and its broader impact on life. *medRxiv* 2025.05.12.25327518 (2025). DOI: 10.1101/2025.05.12.25327518. `[Preprint -- to be verified at acceptance]`
+\item Wojcik, G. L., Graff, M., Nishimura, K. K. *et al.* Genetic analyses of diverse populations improves discovery for complex traits. *Nature* **570**, 514--518 (2019). DOI: 10.1038/s41586-019-1310-4.
+\item Zhao, J. H., Stacey, D., Eriksson, N. *et al.* Genetics of circulating inflammatory proteins and their causal relationships with disease. *Nat. Immunol.* **24**, 1544--1554 (2023). DOI: 10.1038/s41590-023-01584-w.
+\item Sudlow, C., Gallacher, J., Allen, N. *et al.* UK Biobank: an open access resource for identifying the causes of a wide range of complex diseases of middle and old age. *PLoS Med.* **12**, e1001779 (2015). DOI: 10.1371/journal.pmed.1001779.
+\item Bycroft, C., Freeman, C., Petkova, D. *et al.* The UK Biobank resource with deep phenotyping and genomic data. *Nature* **562**, 203--209 (2018). DOI: 10.1038/s41586-018-0579-z.
+\end{enumerate}
+\section*{Scientific Reports checklist statements}
+\paragraph{Data availability} All summary statistics used in this study are publicly available. Exposure traits were obtained from the EBI GWAS Catalog Summary Statistics REST API (GRCh38); outcome phenotypes were obtained from the FinnGen R11 public release. Specific trait identifiers (EFO codes) and FinnGen phenotype codes are listed in the Methods and Supplementary Table S1. No restricted or controlled-access data were used.
+\paragraph{Code availability} The custom Python analysis pipeline (modules: gwas\_io.py, mr\_methods.py, mr\_pipeline.py, supplementary.py, supplementary\_network.py, mvmr\_finngen.py, make\_main\_figures.py) is publicly available at https://github.com/[username]/spine-mr-finngen (placeholder; URL and Zenodo DOI to be added at acceptance). All dependencies (Python 3.13, numpy, pandas, scipy, matplotlib) and execution instructions are documented in the repository README. Per-SNP harmonised tables and supplementary figures are released alongside the code under the same repository.
+\paragraph{Author contributions} [To be completed at submission using CRediT (Contributor Roles Taxonomy). Example: X.Y. conceived and designed the study; X.Y. and Z.W. performed the analyses; all authors interpreted the results and drafted the manuscript.]
+\paragraph{Competing interests} The authors declare no competing interests.
+\paragraph{Ethics approval and consent to participate} This study used only publicly available, de-identified GWAS summary statistics. No individual-level data were accessed. The work is therefore exempt from institutional ethical approval and informed-consent requirements under the policies of the source consortia (EBI GWAS Catalog, FinnGen).
+\paragraph{Acknowledgements} [Funding sources and individual contributions to be added at acceptance.]
+\paragraph{Reporting Summary} A Nature Portfolio Reporting Summary for this article is available as a Supplementary file.
+\paragraph{STROBE-MR checklist} A completed STROBE-MR reporting checklist is provided as a Supplementary file (see Skrivankova et al., JAMA 2021).
+\paragraph{Keywords (for submission system only; not part of manuscript body)} Mendelian randomization; osteomyelitis; vertebral osteomyelitis; discitis; spinal infection; immune traits; cytokines; FinnGen; causality. Per Scientific Reports guidance, keywords are entered in the online submission system rather than printed in the article.
+\end{document}

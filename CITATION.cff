@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite both the software and the paper."
+title: "spine-mr-finngen: Mendelian randomization pipeline for immune traits and spine-specific osteomyelitis"
+abstract: >-
+  Pure-Python two-sample Mendelian randomization pipeline linking genetically
+  predicted immune and cytokine traits (EBI GWAS Catalog) to five FinnGen R11
+  osteomyelitis phenotypes, four of them spine-specific.
+authors:
+  - family-names: "[FAMILY NAME]"
+    given-names: "[GIVEN NAME]"
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+    affiliation: "[AFFILIATION]"
+version: "1.0.0"
+date-released: "2026-08-10"
+license: MIT
+repository-code: "https://github.com/<USERNAME>/spine-mr-finngen"
+keywords:
+  - Mendelian randomization
+  - osteomyelitis
+  - vertebral osteomyelitis
+  - discitis
+  - spinal infection
+  - FinnGen
+  - immune traits

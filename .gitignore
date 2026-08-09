@@ -1,0 +1,14 @@
+# environments
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# large re-downloadable GWAS payloads
+data/cache/
+data/raw/
+*.gz
+*.gz.tbi
+
+# build artefacts
+manuscript/_build_tmp.*

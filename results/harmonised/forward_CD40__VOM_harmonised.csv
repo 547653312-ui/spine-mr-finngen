@@ -1,0 +1,4 @@
+SNP,chr,pos,effect_allele,other_allele,eaf_exposure,eaf_outcome,beta_exposure,se_exposure,pval_exposure,F,beta_outcome,se_outcome,pval_outcome,outcome_af_cases,nearest_gene,harmonise_action,palindromic,exposure_study,outcome,status
+rs4801216,19,57323884,T,C,0.6029,0.653268,-0.0898,0.012734311807746703,1.7660000000000001e-12,49.72808258864325,0.0353472,0.145821,0.808469,0.663518,ZNF543,same,False,GCST90012065,Vertebral osteomyelitis (M46.2),kept
+rs2868310,20,45574950,A,G,0.9336,0.953864,0.2371,0.023715036042062345,1.557e-23,99.9575332094349,-0.056374,0.334603,0.866205,0.95198,WFDC8,same,False,GCST90012065,Vertebral osteomyelitis (M46.2),kept
+rs6131010,20,46095666,G,A,0.7292000000000001,0.717081,0.4471,0.011800183436928428,3.87e-314,1435.594621534706,-0.179255,0.153741,0.243632,0.677941,RPL13P2,same,False,GCST90012065,Vertebral osteomyelitis (M46.2),kept

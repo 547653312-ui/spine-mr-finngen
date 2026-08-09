@@ -1,0 +1,4 @@
+SNP,chr,pos,effect_allele,other_allele,eaf_exposure,eaf_outcome,beta_exposure,se_exposure,pval_exposure,F,beta_outcome,se_outcome,pval_outcome,outcome_af_cases,nearest_gene,harmonise_action,palindromic,exposure_study,outcome,status
+rs4801216,19,57323884,T,C,0.6029,0.653255,-0.0898,0.012734311807746703,1.7660000000000001e-12,49.72808258864325,-0.0305163,0.0771232,0.692339,0.645506,ZNF543,same,False,GCST90012065,Pyogenic intervertebral disc infection,kept
+rs2868310,20,45574950,A,G,0.9336,0.953868,0.2371,0.023715036042062345,1.557e-23,99.9575332094349,0.0486056,0.175912,0.782314,0.956241,WFDC8,same,False,GCST90012065,Pyogenic intervertebral disc infection,kept
+rs6131010,20,46095666,G,A,0.7292000000000001,0.717112,0.4471,0.011800183436928428,3.87e-314,1435.594621534706,0.0861219,0.0811458,0.288543,0.733365,RPL13P2,same,False,GCST90012065,Pyogenic intervertebral disc infection,kept

@@ -1,0 +1,6 @@
+outcome_as_exposure,pheno,ncase,num_gw_significant,reverse_MR_feasible,note
+VOM,M13_OSTEOMYELVERTEB,111,0,False,需 >=3 个独立显著 IV 才能跑多方法反向 MR
+DISCITIS,M13_DISCITIS,557,1,False,需 >=3 个独立显著 IV 才能跑多方法反向 MR
+DISCINF,M13_DISCINFECTION,423,1,False,需 >=3 个独立显著 IV 才能跑多方法反向 MR
+SPONDINF,M13_SPONDYLOINFECTION,74,0,False,需 >=3 个独立显著 IV 才能跑多方法反向 MR
+OM,M13_OSTEOMYELITIS,2336,2,False,需 >=3 个独立显著 IV 才能跑多方法反向 MR

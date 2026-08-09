@@ -1,0 +1,4 @@
+SNP,chr,pos,effect_allele,other_allele,eaf_exposure,eaf_outcome,beta_exposure,se_exposure,pval_exposure,F,beta_outcome,se_outcome,pval_outcome,outcome_af_cases,nearest_gene,harmonise_action,palindromic,exposure_study,outcome,status
+rs4801216,19,57323884,T,C,0.6029,0.653661,-0.0898,0.012734311807746703,1.7660000000000001e-12,49.72808258864325,-0.0238915,0.0324217,0.461184,0.647362,ZNF543,same,False,GCST90012065,"Osteomyelitis (all sites, M86)",kept
+rs2868310,20,45574950,A,G,0.9336,0.953718,0.2371,0.023715036042062345,1.557e-23,99.9575332094349,0.118482,0.0739531,0.109128,0.958994,WFDC8,same,False,GCST90012065,"Osteomyelitis (all sites, M86)",kept
+rs6131010,20,46095666,G,A,0.7292000000000001,0.716264,0.4471,0.011800183436928428,3.87e-314,1435.594621534706,0.043529,0.0343139,0.2046,0.725232,RPL13P2,same,False,GCST90012065,"Osteomyelitis (all sites, M86)",kept

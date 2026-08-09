@@ -1,0 +1,26 @@
+{
+  "title": "spine-mr-finngen: Mendelian randomization pipeline for immune traits and spine-specific osteomyelitis",
+  "description": "Analysis code, harmonised instrument tables, results and figures supporting the manuscript 'No robust causal effect of genetically predicted immune traits on spine-specific osteomyelitis: a two-sample Mendelian randomization study'. Pure-Python pipeline; EBI GWAS Catalog exposures, FinnGen R11 outcomes.",
+  "upload_type": "software",
+  "license": "MIT",
+  "access_right": "open",
+  "version": "1.0.0",
+  "language": "eng",
+  "creators": [
+    {
+      "name": "[FAMILY NAME], [GIVEN NAME]",
+      "affiliation": "[AFFILIATION]",
+      "orcid": "0000-0000-0000-0000"
+    }
+  ],
+  "keywords": [
+    "Mendelian randomization",
+    "osteomyelitis",
+    "vertebral osteomyelitis",
+    "discitis",
+    "spinal infection",
+    "FinnGen",
+    "GWAS",
+    "immune traits"
+  ]
+}

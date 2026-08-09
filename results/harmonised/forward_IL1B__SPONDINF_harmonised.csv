@@ -1,0 +1,2 @@
+SNP,chr,pos,effect_allele,other_allele,eaf_exposure,eaf_outcome,beta_exposure,se_exposure,pval_exposure,F,beta_outcome,se_outcome,pval_outcome,outcome_af_cases,nearest_gene,harmonise_action,palindromic,exposure_study,outcome,status
+rs4241122,2,112921279,A,G,0.6908,0.70863,-0.5299,0.054616299992392585,2.949747e-22,94.13330098268085,0.0760351,0.188218,0.686232,0.72376,IL37,same,False,GCST007542,Other infective spondylopathies,kept
