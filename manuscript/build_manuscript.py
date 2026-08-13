@@ -206,7 +206,7 @@ SUPP_BLOCK = [
     ('P', '**Supplementary Table S1.** Exposure manifest: EFO codes, GWAS source, ancestry and sample size for each of the 11 immune/cytokine traits.'),
     ('P', '**Supplementary Table S2.** Full IVW MR results for all 45 exposure–outcome pairs (β, SE, OR, 95% CI, P, Cochran Q, I², F-statistics).'),
     ('P', '**Supplementary Table S3.** Drug-target (cis-pQTL) MR: IL-6 receptor and CD40 against OM and DISCITIS, all four MR methods.'),
-    ('P', '**Supplementary Table S4.** Multivariable MR (MVMR) adjusting for type-2 diabetes and smoking: full per-exposure × per-outcome estimates with conditional F-statistics and overdispersion factors.'),
+    ('P', '**Supplementary Table S4.** Multivariable MR (MVMR) adjusting for body-mass index, type-2 diabetes and smoking: full per-exposure × per-outcome estimates with conditional F-statistics and overdispersion factors.'),
     ('P', '**Supplementary Table S5.** Cross-phenotype random-effects meta-analysis (DerSimonian–Laird): pooled ORs with and without SPONDINF.'),
     ('P', '**Supplementary Table S6.** Reverse-direction MR feasibility: genome-wide significant locus counts per spine-infection phenotype in FinnGen R11.'),
     ('P', '**Supplementary Table S7.** Formal LD-clumping sensitivity analysis (1000 Genomes Phase 3 European panel, r²<0.001, via LDlink LDmatrix): instrument counts before/after clumping for the six key traits and the drug-target cis-pQTL sets, and re-estimated MR results with the clumped instruments.'),

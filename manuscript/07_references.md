@@ -3,7 +3,7 @@
 > All entries follow Nature reference style: Author(s). Title. *Journal Abbreviation* **vol**, pages (year). DOI. A small number of pre-print entries are flagged with `[DOI to be verified]` and should be confirmed by the corresponding author at acceptance.
 
 1. Lew, D. P. & Waldvogel, F. A. Osteomyelitis. *Lancet* **364**, 369–379 (2004). DOI: 10.1016/S0140-6736(04)16727-5.
-2. Kehrer, M., Pedersen, C., Jensen, T. G., Lassen, A. T. Increasing incidence of pyogenic spondylodiscitis: a 14-year population-based study. *Spine* **39**, E813–E817 (2014). DOI: 10.1097/BRS.0000000000000410.
+2. Kehrer, M., Pedersen, C., Jensen, T. G. & Lassen, A. T. Increasing incidence of pyogenic spondylodiscitis: a 14-year population-based study. *Spine* **39**, E813–E817 (2014). DOI: 10.1097/BRS.0000000000000410.
 3. Pigrau, C., Rodríguez-Pardo, D., Fernández-Hidalgo, N. *et al.* Vertebral osteomyelitis: clinical features and outcome. *Enferm. Infecc. Microbiol. Clin.* **33**, 143–149 (2015). DOI: 10.1016/j.eimc.2014.07.008.
 4. Tsai, C. C., Goodman, S. B., Greenfield, E. M. *et al.* Host immune mediators in bone infection. *J. Orthop. Res.* **36**, 556–565 (2018). DOI: 10.1002/jor.23759.
 5. Ardura, M. I., Banchereau, R., Mejias, A. *et al.* Dual transcriptomic profiling of host and pathogen during acute *Staphylococcus aureus* musculoskeletal infection. *Front. Immunol.* **10**, 2559 (2019). DOI: 10.3389/fimmu.2019.02559.
@@ -11,11 +11,11 @@
 7. Tande, A. J. & Patel, R. Prosthetic joint infection. *Clin. Microbiol. Rev.* **27**, 302–345 (2014). DOI: 10.1128/CMR.00111-13.
 8. Murdoch, D. R., Corey, G. R., Hoen, B. *et al.* Clinical presentation, etiology, and outcome of infective endocarditis in the 21st century: the International Collaboration on Endocarditis–Prospective Cohort Study. *Arch. Intern. Med.* **169**, 463–473 (2009). DOI: 10.1001/archinternmed.2008.603.
 9. Crouser, N., Reece, B., Hake, D. *et al.* Diabetes mellitus and osteomyelitis: a systematic review of pathophysiologic mechanisms and clinical outcomes. *J. Bone Jt. Infect.* **8**, 211–222 (2023). DOI: 10.5194/jbji-8-211-2023.
-10. Davies, N. M., Holmes, M. V., Davey Smith, G. Reading Mendelian randomization studies: a guide, glossary, and checklist for clinicians. *BMJ* **362**, k601 (2018). DOI: 10.1136/bmj.k601.
+10. Davies, N. M., Holmes, M. V. & Davey Smith, G. Reading Mendelian randomization studies: a guide, glossary, and checklist for clinicians. *BMJ* **362**, k601 (2018). DOI: 10.1136/bmj.k601.
 11. Davey Smith, G. & Hemani, G. Mendelian randomization: genetic anchors for causal inference in epidemiological studies. *Hum. Mol. Genet.* **23**, R89–R98 (2014). DOI: 10.1093/hmg/ddu328.
 12. Lawlor, D. A., Harbord, R. M., Sterne, J. A. C., Timpson, N. & Davey Smith, G. Mendelian randomization: using genes as instruments for making causal inferences in epidemiology. *Stat. Med.* **27**, 1133–1163 (2008). DOI: 10.1002/sim.3034.
 13. Skrivankova, V. W., Richmond, R. C., Woolf, B.A.R. *et al.* Strengthening the Reporting of Observational Studies in Epidemiology Using Mendelian Randomization: The STROBE-MR Statement. *JAMA* **326**, 1614–1621 (2021). DOI: 10.1001/jama.2021.18236.
-14. Gruber, R. C., Wirsching, M., von Hacht, J. L. *et al.* Genetic risk for chronic pain and its broader impact on life. *medRxiv* 2025.05.12.25327518 (2025). DOI: 10.1101/2025.05.12.25327518. `[Preprint — to be verified at acceptance]`
+14. Liu, H., Xing, H., Yu, X. *et al.* Two-sample Mendelian randomization investigating the causal association between endocarditis and osteomyelitis: a validation analysis using UK Biobank and FinnGen databases. *Medicine (Baltimore)* **104**, e44651 (2025). DOI: 10.1097/MD.0000000000044651.
 15. Kurki, M. I., Karjalainen, J., Palta, P. *et al.* FinnGen provides genetic insights from a well-phenotyped isolated population. *Nature* **613**, 508–518 (2023). DOI: 10.1038/s41586-022-05473-8.
 16. Verbanck, M., Chen, C.-Y., Neale, B. & Do, R. Detection of widespread horizontal pleiotropy in causal relationships inferred from Mendelian randomization between complex traits and diseases. *Nat. Genet.* **50**, 693–698 (2018). DOI: 10.1038/s41588-018-0099-7.
 17. Burgess, S. & Thompson, S. G. Avoiding bias from weak instruments in Mendelian randomization studies. *Int. J. Epidemiol.* **40**, 755–764 (2011). DOI: 10.1093/ije/dyr036.
